@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "framework": "vite",
+  "installCommand": "pnpm install",
+  "buildCommand": "pnpm build:client",
+  "outputDirectory": "dist/static",
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}
+
+
+
+
