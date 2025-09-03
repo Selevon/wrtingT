@@ -1,4 +1,5 @@
 import { Story } from '@/components/literary-story/StoryCard';
+import { env } from '@/config/env';
 
 // 文学故事模拟数据
 export const literaryStories: Story[] = [

@@ -2,14 +2,15 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '@/hooks/useTheme';
 import { useViewMode } from '@/contexts/ViewModeContext';
+import { generateBackgroundImageUrl } from '@/lib/utils/imageUtils';
 
 export default function Home() {
   const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   const { viewMode, toggleViewMode } = useViewMode();
   
-  // 背景图片URL
-  const backgroundImageUrl = `https://space.coze.cn/api/coze_space/gen_image?image_size=landscape_16_9&prompt=Ancient%20Chinese%20study%20with%20calligraphy%20and%20books%20warm%20lighting&sign=4957feaa9e34826be7abc39b1e964e91`;
+  // 背景图片URL - 使用环境变量
+  const backgroundImageUrl = generateBackgroundImageUrl();
   
   return (
     <div className={`min-h-screen bg-white dark:bg-gray-900 flex flex-col ${viewMode === 'mobile' ? 'max-w-md mx-auto w-full' : ''}`}>
